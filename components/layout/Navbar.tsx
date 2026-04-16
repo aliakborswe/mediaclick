@@ -37,7 +37,7 @@ const navItems = [
     href: "#",
     subItems: [
       { name: "Careers", href: "/careers" },
-      { name: "Internships", href: "/join-us/internships" },
+      { name: "Internships", href: "/internships" },
     ],
   },
   { name: "Blog", href: "/blog" },
