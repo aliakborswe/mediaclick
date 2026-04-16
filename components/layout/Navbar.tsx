@@ -12,8 +12,9 @@ import {
 } from "@/components/ui/sheet";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import logo from "@/assets/images/mediaclick-logo.png";
+import logo from "@/assets/svg/logo.svg";
 import Image from "next/image";
+import { ModeToggle } from "./ModeToggle";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -182,10 +183,11 @@ const Navbar = () => {
             )}
           </div>
         ))}
+        <ModeToggle />
         <Link href='/contact-us' onClick={handleLinkClick} className=''>
           <Button
-            variant={"default"}
-            className={`font-semibold p-5 rounded-full  transition-all duration-300 shadow-premium hover:shadow-primary/20 hover:scale-[1.02] ${
+            variant='default'
+            className={`font-semibold p-5 transition-all duration-300 shadow-premium hover:shadow-primary/20 hover:scale-[1.02] ${
               isActive("/contact-us") ? "" : ""
             }`}
           >
@@ -215,13 +217,17 @@ const Navbar = () => {
         >
           {/* Logo */}
           <Link href='/' className='flex items-center'>
-            <Image
-              src={logo}
-              alt='mediaclick-logo'
-              width={500}
-              height={500}
-              className='h-9 w-auto'
-            />
+            <div className='inline-flex items-center gap-1 text-[26px] uppercase tracking-[-0.5px] leading-none'>
+              <span className='text-foreground font-semibold'>MEDIA</span>
+              <Image
+                src={logo}
+                alt='mediaclick-logo'
+                width={500}
+                height={500}
+                className='h-9 w-auto shrink-0'
+              />
+              <span className='text-foreground font-semibold'>CLICKING</span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -231,7 +237,7 @@ const Navbar = () => {
           <div className='block lg:hidden'>
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
-                <div className='text-black'>
+                <div className='text-foreground'>
                   {open ? (
                     <X className='h-8 w-8' />
                   ) : (
@@ -243,7 +249,7 @@ const Navbar = () => {
               <SheetDescription>{""}</SheetDescription>
               <SheetContent
                 side='left'
-                className='w-3/4 sm:w-1/2 rounded-r bg-white border-none text-white overflow-auto'
+                className='w-3/4 sm:w-1/2 rounded-r bg-background text-foreground border-border overflow-auto'
               >
                 <div className='flex flex-col gap-2 mt-10 mx-2.5'>
                   {renderNavLinks()}

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { newsletterSchema } from "@/lib/schemas";
 import Image from "next/image";
-import logo from "@/assets/images/mediaclick-logo.png";
+import logo from "@/assets/svg/logo.svg";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Wrapper from "../shared/Wrapper";
 
@@ -81,16 +81,20 @@ export function Footer() {
       <Wrapper>
         <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
           {/* Company Info */}
-          <div>
+          <div className="space-y-2">
             {/* Logo */}
             <Link href='/' className='flex items-center'>
-              <Image
-                src={logo}
-                alt='mediaclick-logo'
-                width={500}
-                height={500}
-                className='h-9 w-auto'
-              />
+              <div className='inline-flex items-center gap-1 text-[26px] uppercase tracking-[-0.5px] leading-none'>
+                <span className='text-foreground font-semibold'>MEDIA</span>
+                <Image
+                  src={logo}
+                  alt='mediaclick-logo'
+                  width={500}
+                  height={500}
+                  className='h-9 w-auto shrink-0'
+                />
+                <span className='text-foreground font-semibold'>CLICKING</span>
+              </div>
             </Link>
             <p className='text-sm text-muted-foreground mb-6'>
               Your strategic digital media partner for growth-driven solutions.
@@ -122,7 +126,7 @@ export function Footer() {
                   href={social.href}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='inline-flex items-center justify-center h-9 w-9 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors'
+                  className='inline-flex items-center justify-center h-9 w-9 rounded-lg bg-primary/20 hover:bg-primary/50 dark:bg-white/80 dark:hover:bg-white transition-colors'
                   aria-label={social.label}
                 >
                   <Image
