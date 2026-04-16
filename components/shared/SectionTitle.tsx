@@ -12,6 +12,7 @@ type Props = {
   centered?: boolean;
   descriptionClassName?: string;
   barClass?: string;
+  bar?: boolean;
 };
 
 export default function SectionTitle({
@@ -20,6 +21,7 @@ export default function SectionTitle({
   description,
   className,
   centered = false,
+  bar = false,
 }: Props) {
   return (
     <AnimatedSection
@@ -27,7 +29,7 @@ export default function SectionTitle({
       className={cn(centered && "text-center", className)}
     >
       <div className='inline-flex items-center gap-2 mb-4'>
-        <div className='h-1 w-12 bg-primary rounded-full' />
+        {bar && <div className='w-8 h-1 rounded-full bg-primary' />}
         <span className='text-sm font-semibold text-primary'>{subtitle}</span>
       </div>
       <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-4'>

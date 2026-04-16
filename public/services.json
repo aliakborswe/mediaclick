@@ -1,0 +1,194 @@
+[
+  {
+    "id": "001",
+    "title": "SEO Services",
+    "color": "bg-blue-500",
+    "description": "Boost your online visibility with our comprehensive SEO strategies. We optimize your website to rank higher and attract qualified traffic.",
+    "intro": "Dominate search engine results and drive organic growth. Our SEO experts use data-backed strategies to improve your rankings, increase visibility, and connect you with high-intent customers searching for your services.",
+    "benefits": [
+      "Higher organic search rankings",
+      "Increased website traffic",
+      "Improved brand authority",
+      "Better user experience",
+      "Long-term sustainable growth"
+    ],
+    "delivery": "We perform deep audits, keyword research, and on-page optimization followed by monthly performance tracking.",
+    "why_astzo": "Our results-driven approach focuses on ROI rather than just rankings, ensuring your traffic converts into revenue.",
+    "cta": "Audit My Website",
+    "banner": "/images/service/SEO-Services.jpg",
+    "slug": "seo-services",
+    "category": "Digital Marketing",
+    "technologies": [
+      "Ahrefs",
+      "Semrush",
+      "Google Search Console",
+      "Google Analytics",
+      "Screaming Frog"
+    ],
+    "features": [
+      "Keyword Research",
+      "On-Page SEO",
+      "Technical SEO",
+      "Link Building",
+      "Content Strategy"
+    ]
+  },
+  {
+    "id": "002",
+    "title": "PPC Advertising",
+    "color": "bg-orange-500",
+    "description": "Maximize ROI with data-driven paid advertising campaigns across Google, Facebook, and other platforms.",
+    "intro": "Get instant visibility and high-quality leads with targeted PPC campaigns. We manage your ad spend efficiently across search engines and social media to ensure every dollar contributes to your bottom line.",
+    "benefits": [
+      "Immediate search engine visibility",
+      "Highly targeted audience reach",
+      "Full control over ad spend",
+      "Measurable and trackable ROI",
+      "A/B testing for optimal performance"
+    ],
+    "delivery": "We handle account setup, creative design, bid management, and continuous campaign optimization.",
+    "why_astzo": "We specialize in hyper-targeted campaigns that minimize wasted spend and maximize conversion rates.",
+    "cta": "Start Your Campaign",
+    "banner": "/images/service/Branding-Strategy.jpg",
+    "slug": "ppc-advertising",
+    "category": "Digital Marketing",
+    "technologies": [
+      "Google Ads",
+      "Meta Ads",
+      "LinkedIn Ads",
+      "Tag Manager",
+      "Microsoft Advertising"
+    ],
+    "features": [
+      "Search Ads",
+      "Display Remarketing",
+      "Conversion Tracking",
+      "Ad Copywriting",
+      "Bid Optimization"
+    ]
+  },
+  {
+    "id": "003",
+    "title": "Web Design",
+    "color": "bg-purple-500",
+    "description": "Beautiful, responsive websites that convert visitors into customers. User-centered design meets modern technology.",
+    "intro": "Your website is your digital storefront. We create stunning, user-centric designs that not only look professional but are engineered to guide users toward conversion across all devices.",
+    "benefits": [
+      "Custom, brand-aligned aesthetics",
+      "Mobile-first responsive design",
+      "Enhanced user engagement (UX)",
+      "Fast loading speeds",
+      "Intuitive navigation structures"
+    ],
+    "delivery": "Our design process moves from wireframing and prototyping to high-fidelity UI design and handoff.",
+    "why_astzo": "We bridge the gap between creative artistry and technical functionality, ensuring your site performs as good as it looks.",
+    "cta": "Design My Site",
+    "banner": "/images/service/Web-Development.jpg",
+    "slug": "web-design",
+    "category": "Design",
+    "technologies": ["Figma", "Adobe XD", "Sketch", "Photoshop", "Illustrator"],
+    "features": [
+      "UI/UX Design",
+      "Prototyping",
+      "Wireframing",
+      "Responsive Layouts",
+      "Brand Integration"
+    ]
+  },
+  {
+    "id": "004",
+    "title": "E-Commerce Solutions",
+    "color": "bg-pink-500",
+    "description": "End-to-end e-commerce platforms that drive sales. From setup to optimization, we handle it all.",
+    "intro": "Sell everywhere with a robust e-commerce platform. We build scalable online stores equipped with secure payments, inventory management, and seamless checkout experiences to grow your retail business.",
+    "benefits": [
+      "Secure payment gateway integration",
+      "Seamless inventory management",
+      "Optimized checkout flow",
+      "Scalable product catalogs",
+      "Customer data insights"
+    ],
+    "delivery": "We provide end-to-end setup including store configuration, product migration, and third-party integrations.",
+    "why_astzo": "We focus on the 'Buyer’s Journey,' optimizing every touchpoint to reduce cart abandonment and increase lifetime value.",
+    "cta": "Build My Store",
+    "banner": "/images/service/Mobile-App-Development.jpg",
+    "slug": "ecommerce-solutions",
+    "category": "Web Development",
+    "technologies": [
+      "Shopify",
+      "WooCommerce",
+      "Magento",
+      "Stripe",
+      "BigCommerce"
+    ],
+    "features": [
+      "Shopping Cart",
+      "Product Management",
+      "Payment Integration",
+      "Order Tracking",
+      "Mobile Commerce"
+    ]
+  },
+  {
+    "id": "005",
+    "title": "Social Media Marketing",
+    "color": "bg-cyan-500",
+    "description": "Build engaged communities and grow your brand across social platforms with strategic content and campaigns.",
+    "intro": "Turn followers into fans. We develop comprehensive social strategies that build brand awareness and foster community engagement through creative content and strategic platform management.",
+    "benefits": [
+      "Increased brand loyalty",
+      "Direct customer engagement",
+      "Targeted community growth",
+      "Consistent brand voice",
+      "Viral potential for content"
+    ],
+    "delivery": "We manage your social presence through content calendars, community management, and weekly reporting.",
+    "why_astzo": "We don't just post; we create conversations. Our strategy ensures your social presence aligns with your overall business goals.",
+    "cta": "Grow My Socials",
+    "banner": "/images/service/Digital-Marketing.jpg",
+    "slug": "social-media-marketing",
+    "category": "Digital Marketing",
+    "technologies": [
+      "Hootsuite",
+      "Buffer",
+      "Canva",
+      "Sprout Social",
+      "Meta Business Suite"
+    ],
+    "features": [
+      "Content Creation",
+      "Community Management",
+      "Influencer Outreach",
+      "Social Audits",
+      "Analytics Reporting"
+    ]
+  },
+  {
+    "id": "006",
+    "title": "Interactive Media",
+    "color": "bg-yellow-500",
+    "description": "Create immersive experiences with interactive content, animations, and cutting-edge multimedia solutions.",
+    "intro": "Capture attention in a crowded digital world. We design immersive multimedia experiences, from custom animations to interactive web elements, that make your brand unforgettable.",
+    "benefits": [
+      "High user retention and dwell time",
+      "Memorability and brand recall",
+      "Simplified complex storytelling",
+      "High engagement rates",
+      "Innovative brand positioning"
+    ],
+    "delivery": "We blend creative storytelling with technical execution to produce high-impact interactive assets.",
+    "why_astzo": "We stay ahead of the curve, utilizing the latest web technologies to create experiences that your competitors can't replicate.",
+    "cta": "Get Interactive",
+    "banner": "/images/service/Media-Planning.jpg",
+    "slug": "interactive-media",
+    "category": "Design",
+    "technologies": ["Three.js", "GSAP", "After Effects", "Lottie", "Webview"],
+    "features": [
+      "2D/3D Animation",
+      "Interactive Infographics",
+      "Motion Graphics",
+      "Micro-interactions",
+      "Video Production"
+    ]
+  }
+]
