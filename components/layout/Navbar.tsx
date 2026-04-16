@@ -22,16 +22,21 @@ const navItems = [
   { name: "Work", href: "/work" },
   {
     name: "Services",
-    href: "#services",
-    subItems: [
-      { name: "SEO Services", href: "/seo" },
-      { name: "PPC Advertising", href: "/ppc" },
-      { name: "Web Design", href: "/web-design" },
-      { name: "E-Commerce Solutions", href: "/e-commerce" },
-      { name: "Social Media Marketing", href: "/social-media" },
-      { name: "Interactive Media", href: "/interactive-media" },
-    ],
+    href: "/services",
+    // subItems: [
+    //   { name: "SEO Services", href: "/seo" },
+    //   { name: "PPC Advertising", href: "/ppc" },
+    //   { name: "Web Design", href: "/web-design" },
+    //   { name: "E-Commerce Solutions", href: "/e-commerce" },
+    //   { name: "Social Media Marketing", href: "/social-media" },
+    //   { name: "Interactive Media", href: "/interactive-media" },
+    // ],
   },
+  {name : "Join Us", href: "/join-us", subItems: [
+    { name: "Careers", href: "/join-us/careers" },
+    { name: "Internships", href: "/join-us/internships" },
+  ]},
+  { name: "Blog", href: "/blog" },
 ];
 
 const Navbar = () => {
@@ -188,7 +193,7 @@ const Navbar = () => {
           <Button
             variant='default'
             className={`font-semibold p-5 transition-all duration-300 shadow-premium hover:shadow-primary/20 hover:scale-[1.02] ${
-              isActive("/contact-us") ? "" : ""
+              isActive("/contact") ? "" : ""
             }`}
           >
             Get Started
