@@ -8,7 +8,7 @@ type WrapperProps = {
 
 const Wrapper = ({ children, className }: WrapperProps) => {
   return (
-    <div className={cn(`container mx-auto px-4 py-12 md:py-16 ${className}`)}>
+    <div className={cn(`container mx-auto px-4 py-16 md:py-24 relative ${className}`)}>
       {children}
     </div>
   );
