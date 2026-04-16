@@ -98,7 +98,7 @@ export default function TestimonialsSection() {
                   key={testimonial.id}
                   className='basis-full lg:basis-1/2'
                 >
-                  <div className='bg-white rounded-xl py-10 px-8 shadow-sm border border-stone-300 hover:border-stone-400 transition-all duration-500 flex flex-col md:flex-row gap-8 items-center h-full'>
+                  <div className='bg-card rounded-xl py-10 px-8 shadow-sm border border-border hover:border-primary/50 transition-all duration-500 flex flex-col md:flex-row gap-8 items-center h-full'>
                     {/* Avatar and Info */}
                     <div className='shrink-0 text-center md:text-left'>
                       <div className='mb-4 relative w-24 h-24 mx-auto md:mx-0'>
@@ -107,17 +107,17 @@ export default function TestimonialsSection() {
                           alt={testimonial.name}
                           width={100}
                           height={100}
-                          className='rounded-full object-cover'
+                          className='rounded-full object-cover border-2 border-primary/20 p-1'
                         />
-                        <div className='absolute -bottom-2 -right-2 bg-accent text-white p-2 rounded-full'>
+                        <div className='absolute -bottom-2 -right-2 bg-primary text-primary-foreground p-2 rounded-full shadow-lg'>
                           <Quote className='w-4 h-4' />
                         </div>
                       </div>
                       <div>
-                        <h4 className='font-bold text-primary'>
+                        <h4 className='font-bold text-foreground group-hover:text-primary transition-colors'>
                           {testimonial.name}
                         </h4>
-                        <p className='text-sm text-black'>
+                        <p className='text-sm text-muted-foreground'>
                           {testimonial.position}
                         </p>
                       </div>
@@ -125,7 +125,7 @@ export default function TestimonialsSection() {
 
                     {/* Quote */}
                     <div className='flex flex-col gap-2 items-center justify-between w-full h-full relative'>
-                      <blockquote className='text-lg italic text-black relative text-center md:text-left'>
+                      <blockquote className='text-lg italic text-foreground relative text-center md:text-left leading-relaxed'>
                         “{testimonial.quote}”
                       </blockquote>
                     </div>

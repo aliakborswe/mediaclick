@@ -49,7 +49,7 @@ export default function WorkProcessSection() {
     <section className='w-full bg-linear-to-b from-background to-primary/5'>
       <Wrapper>
         <SectionTitle
-        bar
+          bar
           title='How We Work'
           subtitle='Our Process'
           description='A proven methodology that delivers results, from initial strategy to final optimization.'
@@ -58,7 +58,7 @@ export default function WorkProcessSection() {
 
         <div className='relative md:mt-16'>
           {/* Process line */}
-          <div className='hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-secondary/30 -translate-x-1/2 z-0'></div>
+          <div className='hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 -translate-x-1/2 z-0'></div>
 
           {/* Process steps */}
           <div className='space-y-0 md:space-y-10 relative z-10'>
@@ -77,14 +77,14 @@ export default function WorkProcessSection() {
                   <h3 className='text-2xl font-bold text-primary mb-3'>
                     {step.title}
                   </h3>
-                  <p className='text-black'>{step.description}</p>
+                  <p className='text-muted-foreground'>{step.description}</p>
                 </div>
 
-                <div className='shrink-0 w-16 h-16 rounded-full bg-green-500 flex items-center justify-center shadow-md shadow-accent'>
-                  <step.icon className='w-8 h-8 textForeground' />
+                <div className='shrink-0 w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-md shadow-primary/20'>
+                  <step.icon className='w-8 h-8 text-primary-foreground' />
                 </div>
 
-                <div  
+                <div
                   className={`w-full md:w-1/2 ${
                     index % 2 === 0 ? "md:text-left" : "md:text-right"
                   } md:hidden lg:block`}

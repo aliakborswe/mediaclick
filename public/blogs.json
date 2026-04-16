@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "The Future of AI in Digital Marketing Strategies",
+    "description": "Explore how artificial intelligence is revolutionizing the digital marketing landscape, from personalized customer experiences to predictive analytics.",
+    "category": "MARKETING",
+    "date": "Oct 12, 2026",
+    "slug": "future-of-ai-digital-marketing",
+    "image": "/images/blog/AI-img.png"
+  },
+  {
+    "id": 2,
+    "title": "Designing for Gen Z: Typographic Trends to Watch",
+    "description": "Understanding the visual language of the next generation of consumers through bold typography and vibrant design patterns.",
+    "category": "DESIGN",
+    "date": "Oct 08, 2026",
+    "slug": "designing-for-gen-z-typography",
+    "image": "/images/blog/Design-for-Generation-Z.webp"
+  },
+  {
+    "id": 3,
+    "title": "How Predictive Intelligence Boosts E-Commerce ROI",
+    "description": "Discover the data-driven methods used by leading retailers to anticipate customer needs and maximize conversion rates.",
+    "category": "TECHNOLOGY",
+    "date": "Sep 29, 2026",
+    "slug": "predictive-intelligence-ecommerce",
+    "image": "/images/blog/ecommerce-website-optimization-featured-image.png"
+  }
+]

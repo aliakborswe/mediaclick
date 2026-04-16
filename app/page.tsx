@@ -1,5 +1,6 @@
 import { CTASection } from "@/components/home/CTASection";
 import { HeroSection } from "@/components/home/HeroSection";
+import Insights from "@/components/home/Insights";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import ServiceSection from "@/components/home/ServiceSection";
 import { StatsSection } from "@/components/home/StatsSection";
@@ -18,6 +19,7 @@ export default function Home() {
       <PortfolioSection/>
       <TestimonialsSection/>
       <CTASection/>
+      <Insights/>
     </>
   );
 }

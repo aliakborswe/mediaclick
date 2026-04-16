@@ -32,7 +32,7 @@ export async function PortfolioSection() {
         >
           <Link href='/portfolio'>
             <Button
-              variant='secondary'
+              variant='default'
               className='py-5 text-primary-foreground'
             >
               View All Case Studies

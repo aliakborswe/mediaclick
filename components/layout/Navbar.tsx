@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -32,10 +32,14 @@ const navItems = [
     //   { name: "Interactive Media", href: "/interactive-media" },
     // ],
   },
-  {name : "Join Us", href: "/join-us", subItems: [
-    { name: "Careers", href: "/join-us/careers" },
-    { name: "Internships", href: "/join-us/internships" },
-  ]},
+  {
+    name: "Join Us",
+    href: "/join-us",
+    subItems: [
+      { name: "Careers", href: "/join-us/careers" },
+      { name: "Internships", href: "/join-us/internships" },
+    ],
+  },
   { name: "Blog", href: "/blog" },
 ];
 
@@ -53,6 +57,9 @@ const Navbar = () => {
 
   // Add new state to track dropdown open state
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  // Add state for mobile dropdowns
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
 
   // Modified navbar scrolling effect
   const [isVisible, setIsVisible] = useState(true);
@@ -120,34 +127,59 @@ const Navbar = () => {
   // Render navigation links (used for both desktop and mobile)
   const renderNavLinks = () => {
     return (
-      <div className='flex flex-col items-start gap-5 lg:flex-row lg:items-center xl:gap-9 '>
+      <div className='flex flex-col items-start gap-5 lg:flex-row lg:items-center xl:gap-9 w-full'>
         {navItems.map((item) => (
           <div
             key={item.name}
-            className='relative'
-            onMouseEnter={() => item.subItems && handleMouseEnter(item.name)}
-            onMouseLeave={handleMouseLeave}
+            className='relative w-full lg:w-auto'
+            onMouseEnter={() =>
+              item.subItems &&
+              typeof window !== "undefined" &&
+              window.innerWidth >= 1024 &&
+              handleMouseEnter(item.name)
+            }
+            onMouseLeave={() =>
+              typeof window !== "undefined" &&
+              window.innerWidth >= 1024 &&
+              handleMouseLeave()
+            }
           >
             {item.subItems ? (
               // For items with dropdown
-              <div className='cursor-pointer'>
-                <span
-                  className={`font-semibold text-[16px] transition-all duration-300 hover:text-accent ${
-                    item.subItems?.some((si) => pathname.startsWith(si.href))
-                      ? "text-accent"
-                      : "text-foreground/80"
-                  }`}
-                >
-                  {item.name}
-                </span>
+              <div className='w-full lg:w-auto'>
                 <div
-                  className={`absolute -left-2 top-5 z-50 bg-transparent rounded-2xl border-none ${
+                  className='flex items-center justify-between w-full lg:w-auto cursor-pointer group'
+                  onClick={() =>
+                    setMobileDropdown(
+                      mobileDropdown === item.name ? null : item.name,
+                    )
+                  }
+                >
+                  <span
+                    className={`font-semibold text-lg lg:text-[16px] transition-all duration-300 group-hover:text-primary ${
+                      item.subItems?.some((si) => pathname.startsWith(si.href))
+                        ? "text-primary"
+                        : "text-foreground/80"
+                    }`}
+                  >
+                    {item.name}
+                  </span>
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-300 lg:hidden ${
+                      mobileDropdown === item.name ? "rotate-180" : ""
+                    }`}
+                  />
+                </div>
+
+                {/* Desktop Dropdown */}
+                <div
+                  className={`hidden lg:block absolute -left-2 top-5 z-50 bg-transparent rounded-2xl border-none ${
                     openDropdown === item.name
-                      ? "block animate-in fade-in slide-in-from-top-2"
-                      : "hidden"
+                      ? "animate-in fade-in slide-in-from-top-2"
+                      : "invisible opacity-0"
                   }`}
                 >
-                  <div className='flex flex-col gap-3 mt-1.5 lg:mt-7.5 p-4 rounded-xl bg-background/95 backdrop-blur-md border border-border/50 shadow-premium'>
+                  <div className='flex flex-col gap-3 mt-7.5 p-4 rounded-xl bg-background/95 backdrop-blur-md border border-border/50 shadow-premium'>
                     {item.subItems.map((subItem) => {
                       const isChildActive = pathname.startsWith(subItem.href);
                       return (
@@ -155,30 +187,54 @@ const Navbar = () => {
                           key={subItem.name}
                           href={subItem.href}
                           onClick={handleLinkClick}
-                          className={`font-semibold text-[15px] transition-all duration-300 hover:text-accent whitespace-nowrap`}
+                          className={`font-semibold text-[15px] transition-all duration-300 hover:text-primary whitespace-nowrap ${
+                            isChildActive
+                              ? "text-primary"
+                              : "text-foreground/80"
+                          }`}
                         >
-                          <span
-                            className={`font-semibold transition-all duration-300 hover:text-accent ${
-                              isChildActive
-                                ? "text-primary"
-                                : "text-foreground/80"
-                            }`}
-                          >
-                            {subItem.name}
-                          </span>
+                          {subItem.name}
                         </Link>
                       );
                     })}
                   </div>
                 </div>
+
+                {/* Mobile Dropdown */}
+                <div
+                  className={`lg:hidden overflow-hidden transition-all duration-300 ${
+                    mobileDropdown === item.name ? "max-h-96 mt-4" : "max-h-0"
+                  }`}
+                >
+                  <div className='flex flex-col gap-3 pl-4 border-l-2 border-primary/20'>
+                    {item.subItems.map((subItem) => (
+                      <Link
+                        key={subItem.name}
+                        href={subItem.href}
+                        onClick={handleLinkClick}
+                        className={`font-semibold text-base transition-all duration-300 ${
+                          pathname.startsWith(subItem.href)
+                            ? "text-primary"
+                            : "text-foreground/60"
+                        }`}
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               </div>
             ) : (
               // For items without dropdown
-              <Link href={item.href} onClick={handleLinkClick}>
+              <Link
+                href={item.href}
+                onClick={handleLinkClick}
+                className='w-full lg:w-auto block'
+              >
                 <span
-                  className={`font-semibold text-[16px] transition-all duration-300 hover:text-accent ${
+                  className={`font-semibold text-lg lg:text-[16px] transition-all duration-300 hover:text-primary ${
                     isActive(item.href, item.subItems)
-                      ? "text-accent"
+                      ? "text-primary"
                       : "text-foreground/80"
                   }`}
                 >
@@ -188,13 +244,23 @@ const Navbar = () => {
             )}
           </div>
         ))}
-        <ModeToggle />
-        <Link href='/contact-us' onClick={handleLinkClick} className=''>
+        <div className='lg:hidden w-full border-t border-border/50 my-2 pt-4 flex items-center justify-between'>
+          <span className='text-sm font-medium text-muted-foreground'>
+            Switch Theme
+          </span>
+          <ModeToggle />
+        </div>
+        <div className='hidden lg:block'>
+          <ModeToggle />
+        </div>
+        <Link
+          href='/contact'
+          onClick={handleLinkClick}
+          className='w-full lg:w-auto'
+        >
           <Button
             variant='default'
-            className={`font-semibold p-5 transition-all duration-300 shadow-premium hover:shadow-primary/20 hover:scale-[1.02] ${
-              isActive("/contact") ? "" : ""
-            }`}
+            className='w-full lg:w-auto font-semibold p-5 transition-all duration-300 shadow-premium hover:shadow-primary/20 hover:scale-[1.02]'
           >
             Get Started
           </Button>
@@ -242,22 +308,37 @@ const Navbar = () => {
           <div className='block lg:hidden'>
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
-                <div className='text-foreground'>
-                  {open ? (
-                    <X className='h-8 w-8' />
-                  ) : (
-                    <Menu className='h-8 w-8' />
-                  )}
-                </div>
+                <button
+                  className='text-foreground p-2 rounded-md hover:bg-muted transition-colors'
+                  aria-label='Toggle Menu'
+                >
+                  <Menu className='h-7 w-7' />
+                </button>
               </SheetTrigger>
-              <SheetTitle>{""}</SheetTitle>
-              <SheetDescription>{""}</SheetDescription>
+              <SheetTitle className='sr-only'>Navigation Menu</SheetTitle>
+              <SheetDescription className='sr-only'>
+                Access website pages and settings
+              </SheetDescription>
               <SheetContent
-                side='left'
-                className='w-3/4 sm:w-1/2 rounded-r bg-background text-foreground border-border overflow-auto'
+                side='right'
+                className='w-[280px] sm:w-[350px] p-0 bg-background text-foreground border-l border-border'
               >
-                <div className='flex flex-col gap-2 mt-10 mx-2.5'>
-                  {renderNavLinks()}
+                <div className='flex flex-col h-full'>
+                  <div className='p-6 border-b border-border/50'>
+                    <Link
+                      href='/'
+                      onClick={handleLinkClick}
+                      className='flex items-center gap-2'
+                    >
+                      <div className='inline-flex items-center gap-1 text-xl uppercase font-bold text-foreground'>
+                        <span>MEDIA</span>
+                        <span className='text-primary'>CLICK</span>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className='flex-1 overflow-y-auto p-6'>
+                    {renderNavLinks()}
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>

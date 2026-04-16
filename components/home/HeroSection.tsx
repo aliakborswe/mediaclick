@@ -149,7 +149,7 @@ export function HeroSection() {
                 width={800}
                 height={800}
                 alt='MediaClick Logo'
-                className='h-116 aspect-video rounded-2xl'
+                className='aspect-video rounded-2xl'
               />
             </div>
           </motion.div>

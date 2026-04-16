@@ -23,7 +23,7 @@ export default function PortfolioGrid({ projects }: ProjectsProps) {
         >
           <Card
             key={project.id}
-            className='bg-white border-slate-200 hover:shadow-xl transition-all group overflow-hidden p-0 flex flex-col w-full'
+            className='bg-card border-border hover:shadow-xl transition-all group overflow-hidden p-0 flex flex-col w-full'
           >
             <CardContent className='p-0 flex flex-col h-full'>
               <div className='relative aspect-video overflow-y-hidden h-75 '>
@@ -72,14 +72,14 @@ export default function PortfolioGrid({ projects }: ProjectsProps) {
               <div className='flex flex-col flex-1 p-4'>
                 <div className='flex items-start justify-between gap-4'>
                   <div>
-                    <h3 className='text-xl font-bold text-slate-900 group-hover:text-accent transition-colors mb-4'>
+                    <h3 className='text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-4'>
                       <Link href={`/portfolio/${project.slug}`}>
                         {project.title}
                       </Link>
                     </h3>
                   </div>
                 </div>
-                <p className='text-slate-600 mb-4 line-clamp-2'>
+                <p className='text-muted-foreground mb-4 line-clamp-2'>
                   {project.shortDescription}
                 </p>
 
@@ -89,7 +89,7 @@ export default function PortfolioGrid({ projects }: ProjectsProps) {
                     <Badge
                       key={index}
                       variant='secondary'
-                      className='text-xs bg-slate-100 text-slate-700'
+                      className='text-xs bg-muted text-muted-foreground'
                     >
                       {tech}
                     </Badge>
@@ -97,7 +97,7 @@ export default function PortfolioGrid({ projects }: ProjectsProps) {
                   {project.technologies.length > 3 && (
                     <Badge
                       variant='secondary'
-                      className='text-xs bg-slate-100 text-slate-700'
+                      className='text-xs bg-muted text-muted-foreground'
                     >
                       +{project.technologies.length - 3}
                     </Badge>

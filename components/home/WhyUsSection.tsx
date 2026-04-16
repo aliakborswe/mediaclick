@@ -24,14 +24,6 @@ const WHY_FEATURES = [
     title: "24/7 Support",
     description: "Dedicated support team available whenever you need us",
   },
-  {
-    title: "Transparent Reporting",
-    description: "Monthly detailed reports showing exact ROI and progress",
-  },
-  {
-    title: "Custom Solutions",
-    description: "Tailored strategies that fit your unique business needs",
-  },
 ];
 
 export function WhyUsSection() {
@@ -77,14 +69,17 @@ export function WhyUsSection() {
           </AnimatedSection>
 
           {/* Right Side - Visual */}
-          <AnimatedSection variant='slideLeft' className='relative h-125'>
+          <AnimatedSection
+            variant='slideLeft'
+            className='relative h-auto lg:h-125'
+          >
             <div className='absolute inset-0 rounded-2xl bg-linear-to-br from-primary/20 to-secondary/20 blur-3xl' />
             <video
               autoPlay
               loop
               muted
               playsInline
-              className='block h-auto w-full max-h-225 object-cover rounded-lg'
+              className='block h-auto w-full max-h-[300px] lg:max-h-225 object-cover rounded-lg relative z-10'
             >
               <source src={"videos/media-clicking.mp4"} type='video/mp4' />
             </video>
