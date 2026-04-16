@@ -211,7 +211,7 @@ const Navbar = () => {
       >
         <nav
           id='header'
-          className={`container mx-auto px-2.5 flex items-center justify-between relative`}
+          className={`container mx-auto px-4 flex items-center justify-between relative`}
         >
           {/* Logo */}
           <Link href='/' className='flex items-center'>
