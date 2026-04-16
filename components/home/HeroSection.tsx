@@ -139,9 +139,9 @@ export function HeroSection() {
           <div className='absolute inset-0 rounded-2xl bg-linear-to-br from-primary/20 to-secondary/20 blur-3xl' />
 
           <motion.div
-            initial={{ x: 120, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+            initial={{ opacity: 0, scale: 0.2 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9,  delay: 0.3 }}
           >
             <div className='relative h-full flex items-center justify-center rounded-2xl backdrop-blur-sm p-8'>
               <Image

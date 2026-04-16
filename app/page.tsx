@@ -1,15 +1,11 @@
 import { HeroSection } from "@/components/home/HeroSection";
-import { Footer } from "@/components/layout/Footer";
-import Navbar from "@/components/layout/Navbar";
+import ServiceSection from "@/components/home/ServiceSection";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main className='min-h-screen'>
-        <HeroSection/>
-      </main>
-      <Footer />
+      <HeroSection />
+      <ServiceSection />
     </>
   );
 }
