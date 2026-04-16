@@ -4,7 +4,7 @@ import Wrapper from "../shared/Wrapper";
 
 export default function AboutHero() {
   return (
-    <section className='relative h-auto min-h-125 py-16 lg:py-24 bg-background flex items-center justify-center overflow-hidden'>
+    <section className='relative h-auto min-h-125 pt-16 lg:pt-24 bg-background flex items-center justify-center overflow-hidden'>
       {/* Decorative elements */}
       <div className='absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl'></div>
       <div className='absolute bottom-20 right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl'></div>

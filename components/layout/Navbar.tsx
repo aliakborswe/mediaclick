@@ -34,9 +34,9 @@ const navItems = [
   },
   {
     name: "Join Us",
-    href: "/join-us",
+    href: "#",
     subItems: [
-      { name: "Careers", href: "/join-us/careers" },
+      { name: "Careers", href: "/careers" },
       { name: "Internships", href: "/join-us/internships" },
     ],
   },

@@ -5,8 +5,8 @@ import Wrapper from "../shared/Wrapper";
 
 export default function ContactHero() {
   return (
-    <section className='relative h-auto min-h-[50vh] bg-background flex items-center justify-center overflow-hidden'>
-      <Wrapper className='py-24 lg:py-32'>
+    <section className='relative h-auto min-h-[50vh] bg-background pt-24 lg:pt-32 flex items-center justify-center overflow-hidden'>
+      <Wrapper>
         <div className='text-center max-w-4xl mx-auto'>
           <HeroContent
             title='Contact'
