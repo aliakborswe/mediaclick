@@ -1,0 +1,129 @@
+[
+  {
+    "id": 1,
+    "title": "Proprint2k - Printing Solutions",
+    "category": "web",
+    "description": "A full-featured printing solution with quote form. A full-featured printing solution with integrated quote forms. From high-quality marketing materials to custom packaging, we bring your brand to life.",
+    "shortDescription": "A full-featured printing solution with integrated quote forms. From high-quality marketing materials to custom packaging, we bring your brand to life.",
+    "image": "/images/portfolios/p1/proprint2k.webp",
+    "gallery": [
+      "/images/portfolios/p1/proprint2k.webp",
+      "/images/portfolios/p1/proprint2k-book.webp",
+      "/images/portfolios/p1/proprint2k-card.webp",
+      "/images/portfolios/p1/proprint2k-leaflets.webp",
+      "/images/portfolios/p1/proprint2k-wedding.webp"
+    ],
+    "slug": "proprint2k-printing-solutions",
+    "technologies": [
+      "WordPress",
+      "Elementor",
+      "MySql",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "projectType": "WordPress Website",
+    "clientName": "ShopZone",
+    "projectDuration": "3 months",
+    "teamSize": 5,
+    "completionDate": "2024-06-15",
+    "url": "https://proprint2k.co.uk",
+    "githubUrl": "",
+    "features": ["Product listing", "Cart system", "Order tracking"],
+    "challenges": ["Payment integration", "Scalable architecture"],
+    "solutions": ["Used Stripe API", "Implemented microservices"],
+    "testimonial": {
+      "quote": "",
+      "author": "John Doe",
+      "position": "CTO",
+      "company": "ShopZone"
+    },
+    "tags": ["ecommerce", "shop", "fullstack"],
+    "featured": true,
+    "status": "completed"
+  },
+  {
+    "id": 2,
+    "title": "Happierleads - Identify and Engage Leads",
+    "category": "web",
+    "description": "Happierleads.com helps businesses identify anonymous website visitors, turning traffic into actionable B2B leads in real-time.",
+    "shortDescription": "Happierleads.com helps businesses identify anonymous website visitors, turning traffic into actionable B2B leads in real-time.",
+    "image": "/images/portfolios/p2/happierleads.webp",
+    "gallery": [
+      "/images/portfolios/p2/happierleads.webp",
+      "/images/portfolios/p2/happierleads-academy.webp",
+      "/images/portfolios/p2/happierleads-blog.webp",
+      "/images/portfolios/p2/happierleads-pricing.webp",
+      "/images/portfolios/p2/happierleads-book.webp"
+    ],
+    "slug": "happierleads-identify-and-engage-leads",
+    "technologies": ["WordPress", "React", "Node.js", "MongoDB", "MySql"],
+    "projectType": "Web Application",
+    "clientName": "HealthCorp",
+    "projectDuration": "4 months",
+    "teamSize": 6,
+    "completionDate": "2024-04-10",
+    "url": "https://happierleads.com",
+    "githubUrl": "",
+    "features": [
+      "Booking appointments",
+      "Medical history",
+      "Push notifications"
+    ],
+    "challenges": ["HIPAA compliance", "Notification handling"],
+    "solutions": ["Encrypted storage", "Used Firebase Cloud Messaging"],
+    "testimonial": {
+      "quote": "The app is user-friendly and secure.",
+      "author": "Jane Smith",
+      "position": "Project Manager",
+      "company": "HealthCorp"
+    },
+    "tags": ["healthcare", "mobile", "appointment"],
+    "featured": true,
+    "status": "completed"
+  },
+  {
+    "id": 3,
+    "title": "Gold Mortgages - Your Mortgage Advisor in Israel",
+    "category": "web",
+    "description": "Gold Mortgages offers expert mortgage solutions tailored to your needs",
+    "shortDescription": "Gold-Mortgages.com offers expert mortgage solutions tailored to your needs, helping you secure your dream home with confidence and ease.",
+    "image": "/images/portfolios/p3/gold-mortgages.webp",
+    "gallery": [
+      "/images/portfolios/p3/gold-mortgages.webp",
+      "/images/portfolios/p3/gold-mortgages-blog.webp",
+      "/images/portfolios/p3/gold-mortgages-contact.webp",
+      "/images/portfolios/p3/gold-mortgages-faq.webp",
+      "/images/portfolios/p3/gold-mortgages-story.webp"
+    ],
+    "slug": "gold-mortgages-your-mortgage-advisor",
+    "technologies": [
+      "WordPress",
+      "Elementor",
+      "MySql",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP"
+    ],
+    "projectType": "Website",
+    "clientName": "Mosse",
+    "projectDuration": "2 weeks",
+    "teamSize": 4,
+    "completionDate": "2023-12-01",
+    "url": "https://gold-mortgages.com",
+    "githubUrl": "",
+    "features": ["Listings", "Agent dashboard", "Virtual tours"],
+    "challenges": ["Image-heavy performance", "Filtering accuracy"],
+    "solutions": ["Lazy loading", "Advanced search algorithms"],
+    "testimonial": {
+      "quote": "Fantastic work, very satisfied.",
+      "author": "Robert K.",
+      "position": "Director",
+      "company": "EstatePro"
+    },
+    "tags": ["realestate", "property", "listing"],
+    "featured": false,
+    "status": "completed"
+  }
+]

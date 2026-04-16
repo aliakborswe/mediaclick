@@ -4,8 +4,10 @@ import PortfolioGrid from "../shared/PortfolioGrid";
 import { Button } from "../ui/button";
 import SectionTitle from "../shared/SectionTitle";
 import Wrapper from "../shared/Wrapper";
+import { getProjects } from "@/lib/projects";
 
-export function PortfolioSection() {
+export async function PortfolioSection() {
+  const projects = await getProjects();
   return (
     <section className='w-full bg-background'>
       <Wrapper>
@@ -20,7 +22,7 @@ export function PortfolioSection() {
         />
 
         {/* Portfolio Grid */}
-        <PortfolioGrid />
+        <PortfolioGrid projects={projects} />
 
         {/* CTA */}
         <AnimatedSection

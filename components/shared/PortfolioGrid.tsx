@@ -1,85 +1,121 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ExternalLink, FolderGit2 } from "lucide-react";
 import { AnimatedSection } from "./AnimatedSection";
+import { Project } from "@/lib/projects";
+import Image from "next/image";
+import { Card, CardContent } from "../ui/card";
+import { Badge } from "../ui/badge";
 
-const PORTFOLIO_ITEMS = [
-  {
-    id: 1,
-    title: "E-Commerce Platform Growth",
-    category: "E-Commerce",
-    description: "250% increase in online sales",
-    image: "🛍️",
-  },
-  {
-    id: 2,
-    title: "SaaS Lead Generation",
-    category: "PPC",
-    description: "3x qualified leads, 40% lower CPC",
-    image: "📊",
-  },
-  {
-    id: 3,
-    title: "Local Business SEO",
-    category: "SEO",
-    description: "Ranked #1 for 45+ keywords",
-    image: "🗺️",
-  },
-  {
-    id: 4,
-    title: "Brand Launch Campaign",
-    category: "Social Media",
-    description: "500K+ reach in 3 months",
-    image: "📱",
-  },
-  {
-    id: 5,
-    title: "Web Design & Development",
-    category: "Web Design",
-    description: "45% increase in conversions",
-    image: "🎨",
-  },
-  {
-    id: 6,
-    title: "Interactive Campaign",
-    category: "Interactive Media",
-    description: "Viral engagement, 2M+ impressions",
-    image: "✨",
-  },
-];
+interface ProjectsProps {
+  projects: Project[];
+}
 
-export default function PortfolioGrid() {
+export default function PortfolioGrid({ projects }: ProjectsProps) {
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-      {PORTFOLIO_ITEMS.map((item, index) => (
-        <AnimatedSection key={item.id} variant='slideUp' delay={index * 0.1}>
-          <Link href={`/portfolio/${item.id}`}>
-            <div className='group cursor-pointer h-full rounded-xl border border-border overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-card hover:border-primary/30'>
-              {/* Image Area */}
-              <div className='relative h-48 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center overflow-hidden'>
-                <div className='text-6xl group-hover:scale-110 transition-transform duration-300'>
-                  {item.image}
+      {projects.map((project, index) => (
+        <AnimatedSection
+          key={project.id}
+          variant='slideUp'
+          delay={index * 0.1}
+          className='flex'
+        >
+          <Card
+            key={project.id}
+            className='bg-white border-slate-200 hover:shadow-xl transition-all group overflow-hidden p-0 flex flex-col w-full'
+          >
+            <CardContent className='p-0 flex flex-col h-full'>
+              <div className='relative aspect-video overflow-y-hidden h-75 '>
+                <Image
+                  src={project.image || "/placeholder.svg"}
+                  alt={`${project.title} - ${project.projectType}`}
+                  quality={100}
+                  width={1200}
+                  height={1200}
+                  priority
+                  className='w-full duration-20000 hover:translate-y-[calc(-100%+300px)]'
+                />
+
+                {/* Project Links Overlay */}
+                <div className='absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity'>
+                  <Link
+                    href={project.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <Button
+                      size='sm'
+                      className='bg-white/90 text-slate-900 hover:bg-white cursor-pointer'
+                    >
+                      <ExternalLink className='h-4 w-4' />
+                    </Button>
+                  </Link>
+                  {project.githubUrl && (
+                    <Link
+                      href={project.githubUrl}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <Button
+                        size='sm'
+                        className='bg-white/90 text-slate-900 hover:bg-white cursor-pointer'
+                      >
+                        <FolderGit2 className='h-4 w-4' />
+                      </Button>
+                    </Link>
+                  )}
                 </div>
               </div>
 
-              {/* Content */}
-              <div className='p-6'>
-                <div className='flex items-center justify-between mb-3'>
-                  <span className='inline-block px-3 py-1 text-xs font-semibold text-primary bg-primary/10 rounded-full'>
-                    {item.category}
-                  </span>
-                  <ArrowUpRight className='h-4 w-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity' />
+              {/* Content Section */}
+              <div className='flex flex-col flex-1 p-4'>
+                <div className='flex items-start justify-between gap-4'>
+                  <div>
+                    <h3 className='text-xl font-bold text-slate-900 group-hover:text-accent transition-colors mb-4'>
+                      <Link href={`/portfolio/${project.slug}`}>
+                        {project.title}
+                      </Link>
+                    </h3>
+                  </div>
                 </div>
-
-                <h3 className='text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors'>
-                  {item.title}
-                </h3>
-                <p className='text-sm text-muted-foreground'>
-                  {item.description}
+                <p className='text-slate-600 mb-4 line-clamp-2'>
+                  {project.shortDescription}
                 </p>
+
+                {/* Technologies */}
+                <div className='flex flex-wrap gap-1 mt-auto'>
+                  {project.technologies.slice(0, 3).map((tech, index) => (
+                    <Badge
+                      key={index}
+                      variant='secondary'
+                      className='text-xs bg-slate-100 text-slate-700'
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                  {project.technologies.length > 3 && (
+                    <Badge
+                      variant='secondary'
+                      className='text-xs bg-slate-100 text-slate-700'
+                    >
+                      +{project.technologies.length - 3}
+                    </Badge>
+                  )}
+                </div>
+
+                {/* View Details Button (stick to bottom) */}
+                <div className='mt-auto pt-3'>
+                  <Link href={`/portfolio/${project.slug}`}>
+                    <Button className='w-full bg-accent text-black hover:bg-accent/90 cursor-pointer'>
+                      View project details
+                      <ArrowRight className='ml-2 h-4 w-4' />
+                    </Button>
+                  </Link>
+                </div>
               </div>
-            </div>
-          </Link>
+            </CardContent>
+          </Card>
         </AnimatedSection>
       ))}
     </div>
