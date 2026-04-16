@@ -12,7 +12,7 @@ export interface Service {
   intro: string;
   benefits: string[];
   delivery: string;
-  why_astzo: string;
+  why_media_clicking: string;
   cta: string;
   icon: string;
   banner: string;

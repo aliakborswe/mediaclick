@@ -64,7 +64,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
             </CardHeader>
             <CardContent>
               <p className='text-muted-foreground leading-relaxed font-medium'>
-                {service.why_astzo}
+                {service.why_Media - Clicking}
               </p>
             </CardContent>
           </Card>
