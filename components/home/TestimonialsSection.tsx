@@ -140,7 +140,7 @@ export default function TestimonialsSection() {
         {/* Trust Pilot, Google  */}
         <div className='pt-10 flex flex-col sm:flex-row justify-center items-center gap-10'>
           <Link
-            href={"https://www.trustpilot.com/review/Media-Click.com"}
+            href={"https://www.trustpilot.com/review/mediaclicking.com"}
             target='_blank'
           >
             <Image
@@ -152,7 +152,7 @@ export default function TestimonialsSection() {
           </Link>
           <Link
             href={
-              "https://www.google.com/search?si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E-VsYM8rgIEEPlDH23saKWmDedMiPD8yHd-2BmaV4ZnIIwJc7AL0j2LIKv8TNWxAU-nUeE2lE4zDHrPKE6p8E9v2x54_&q=Media-Click+Reviews"
+              "https://www.google.com/search?q=mediaclicking+reviews&oq=mediaclicking+reviews&aqs=chrome..69i57j0i22i30l2j0i390l3.1229j0j7&sourceid=chrome&ie=UTF-8#lrd=0x808f7e2c1b1b8d9f:0x5c6a1e5e4b8c9a3,1,,,"
             }
             target='_blank'
           >
