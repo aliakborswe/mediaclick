@@ -141,7 +141,7 @@ export function HeroSection() {
           <motion.div
             initial={{ opacity: 0, scale: 0.2 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9,  delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className='relative h-full flex items-center justify-center rounded-2xl backdrop-blur-sm p-8'>
               <Image
@@ -149,6 +149,7 @@ export function HeroSection() {
                 width={800}
                 height={800}
                 alt='MediaClick Logo'
+                priority
                 className='aspect-video rounded-2xl'
               />
             </div>

@@ -148,6 +148,7 @@ export default function TestimonialsSection() {
               alt='Trustpilot Reviews'
               width={200}
               height={200}
+              className='h-auto'
             />
           </Link>
           <Link
@@ -156,7 +157,13 @@ export default function TestimonialsSection() {
             }
             target='_blank'
           >
-            <Image src={google} alt='Google Reviews' width={200} height={200} />
+            <Image
+              src={google}
+              alt='Google Reviews'
+              width={200}
+              height={200}
+              className='h-auto'
+            />
           </Link>
         </div>
       </Wrapper>
