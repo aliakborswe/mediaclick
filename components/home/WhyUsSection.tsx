@@ -27,7 +27,7 @@ const WHY_FEATURES = [
 
 export function WhyUsSection() {
   return (
-    <section className='w-full bg-background'>
+    <section className='w-full mx-auto bg-background'>
       <Wrapper>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
           {/* Left Content */}
@@ -72,7 +72,8 @@ export function WhyUsSection() {
           {/* Right Side - Visual */}
           <div>
             <AnimatedSection
-              variant='slideLeft'
+              variant='slideUp'
+              delay={0.05}
               className='relative'
             >
               <div className='absolute inset-0 rounded-2xl bg-linear-to-br from-primary/20 to-secondary/20 blur-3xl' />
@@ -81,7 +82,7 @@ export function WhyUsSection() {
                 loop
                 muted
                 playsInline
-                className='block h-auto w-full max-h-[300px] lg:max-h-225 object-cover rounded-lg relative z-10'
+                className='block h-auto w-full object-contain rounded-lg'
               >
                 <source src={"videos/media-clicking.mp4"} type='video/mp4' />
               </video>
