@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 
 const montserrat = Montserrat({
   variable: "--font-sans",
@@ -38,7 +38,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+          {/* <Header/> */}
+          <Navbar/>
+          {/* <SiteHeader /> */}
           <main className='min-h-screen'>{children}</main>
           <Footer />
         </ThemeProvider>
